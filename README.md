@@ -1,4 +1,4 @@
-# Laravel 8 符合美國國家標準技術研究院的密碼準則
+# Laravel 9 符合美國國家標準技術研究院的密碼準則
 
 引入 langleyfoxall 的 laravel-nist-password-rules 套件來擴增有關密碼安全性要求的準則，NIST SP 800-63 是美國國家標準技術研究院（NIST） 2017 年發佈的數字身份驗證準則的新修訂版（2020 年 3 月更新），簡而言之是密碼管理的一些最佳實踐的整理。
 
@@ -31,5 +31,5 @@ $ npm install && npm run dev
 ----
 
 ## 畫面截圖
-![](https://i.imgur.com/HLv7UiU.png)
+![](https://i.imgur.com/NcUtypJ.png)
 > 檢查密碼確保它們沒有遭受第三方數據洩露的威脅
