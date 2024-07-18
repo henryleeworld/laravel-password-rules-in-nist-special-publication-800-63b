@@ -1,27 +1,23 @@
 {
     "name": "laravel/laravel",
     "type": "project",
-    "description": "The Laravel Framework.",
-    "keywords": ["framework", "laravel"],
+    "description": "The skeleton application for the Laravel framework.",
+    "keywords": ["laravel", "framework"],
     "license": "MIT",
     "require": {
-        "php": "^8.0.2",
-        "guzzlehttp/guzzle": "^7.8",
-        "langleyfoxall/laravel-nist-password-rules": "^6.1",
-        "laravel/framework": "^9.52",
-        "laravel/jetstream": "^2.16",
-        "laravel/sanctum": "^3.2",
-        "laravel/tinker": "^2.8",
-        "livewire/livewire": "^2.12"
+        "php": "^8.2",
+        "langleyfoxall/laravel-nist-password-rules": "^7.0",
+        "laravel/framework": "^11.10",
+        "laravel/tinker": "^2.9"
     },
     "require-dev": {
-        "fakerphp/faker": "^1.23.0",
-        "laravel/pint": "^1.15",
-        "laravel/sail": "^1.23.1",
-        "mockery/mockery": "^1.6.11",
-        "nunomaduro/collision": "^6.4",
-        "phpunit/phpunit": "^9.6.18",
-        "spatie/laravel-ignition": "^1.6"
+        "fakerphp/faker": "^1.23",
+        "laravel/breeze": "^2.0",
+        "laravel/pint": "^1.16",
+        "laravel/sail": "^1.29",
+        "mockery/mockery": "^1.6",
+        "nunomaduro/collision": "^8.1",
+        "phpunit/phpunit": "^11.2"
     },
     "autoload": {
         "psr-4": {
@@ -47,7 +43,9 @@
             "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
         ],
         "post-create-project-cmd": [
-            "@php artisan key:generate --ansi"
+            "@php artisan key:generate --ansi",
+            "@php -r \"file_exists('database/database.sqlite') || touch('database/database.sqlite');\"",
+            "@php artisan migrate --graceful --ansi"
         ]
     },
     "extra": {
@@ -55,6 +53,23 @@
             "dont-discover": []
         }
     },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/langleyfoxall/laravel-password-exposed-validation-rule",
+            "no-api": true
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/langleyfoxall/password_exposed",
+            "no-api": true
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/langleyfoxall/psr-18-guzzle-adapter",
+            "no-api": true
+        }
+    ],
     "config": {
         "optimize-autoloader": true,
         "preferred-install": "dist",
@@ -64,6 +79,6 @@
             "php-http/discovery": true
         }
     },
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "prefer-stable": true
 }

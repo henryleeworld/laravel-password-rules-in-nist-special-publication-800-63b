@@ -1,4 +1,4 @@
-# Laravel 9 符合美國國家標準技術研究院的密碼準則
+# Laravel 11 符合美國國家標準技術研究院的密碼準則
 
 引入 langleyfoxall 的 laravel-nist-password-rules 套件來擴增有關密碼安全性要求的準則，NIST SP 800-63 是美國國家標準技術研究院（NIST） 2017 年發佈的數字身份驗證準則的新修訂版（2020 年 3 月更新），簡而言之是密碼管理的一些最佳實踐的整理。
 
@@ -20,9 +20,13 @@ $ php artisan key:generate
 ```sh
 $ php artisan migrate
 ```
-- 執行安裝 Laravel Mix 引用的依賴項目，並執行所有 Mix 任務。
+- 執行安裝 Vite 和 Laravel 擴充套件引用的依賴項目。
 ```sh
-$ npm install && npm run dev
+$ npm install
+```
+- 執行正式環境版本化資源管道並編譯。
+```sh
+$ npm run build
 ```
 - 在瀏覽器中輸入已定義的路由 URL 來訪問，例如：http://127.0.0.1:8000。
 - 你可以經由 `/register` 來進行註冊。
@@ -31,5 +35,8 @@ $ npm install && npm run dev
 ----
 
 ## 畫面截圖
-![](https://i.imgur.com/NcUtypJ.png)
-> 檢查密碼確保它們沒有遭受第三方數據洩露的威脅
+![](https://i.imgur.com/awKXmLz.png)
+> 對密碼進行字典檔或第三方數據的檢查，避免用戶使用已知的常用或被泄露的密碼
+
+![](https://i.imgur.com/Q5KZrGf.png)
+> 只有在密碼被懷疑泄露或帳戶存在安全風險時，才建議更換密碼
